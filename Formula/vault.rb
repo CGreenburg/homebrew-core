@@ -30,7 +30,7 @@ class Vault < Formula
     (buildpath/"bin").mkpath
 
     cd "src/github.com/hashicorp/vault" do
-      target = build.with?("dynamic") ? "dev-dynamic" : "dev"
+      target = build.with?("dynamic") ? "dev-dynamic" : "dev-ui"
       system "make", target
       bin.install "bin/vault"
       prefix.install_metafiles
